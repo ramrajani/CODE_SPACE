@@ -1,0 +1,23 @@
+{
+  "name": "codeplatform",
+  "version": "1.0.0",
+  "description": "this is a coding platform which also shows you different contest taking place on different websites currently.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "RAM RAJANI",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cheerio": "^1.0.0-rc.2",
+    "cheerio-eq": "^1.0.1",
+    "ejs": "^2.5.9",
+    "express": "^4.16.3",
+    "harp-minify": "^0.4.0",
+    "html": "^1.0.0",
+    "minify": "^3.0.5",
+    "passport": "^0.4.0",
+    "request": "^2.85.0"
+  }
+}

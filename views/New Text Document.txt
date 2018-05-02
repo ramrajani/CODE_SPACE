@@ -1,0 +1,34 @@
+<table style="border:1px solid black">
+<tr style="border:1px solid black">
+    <th style="border:1px solid black">CODE</th>
+    <th style="border:1px solid black">NAME</th> 
+    <th style="border:1px solid black">START</th>
+    <th style="border:1px solid black">END</th>
+   <th style="border:1px solid black">LINK</th>
+  </tr>
+<% itemspresent.forEach(function(itemspresent){ %>
+  
+  <% if(itemspresent.contestcode!=""){ %> 
+  <tr style="border:1px solid black">
+    <th style="border:1px solid black"><%= itemspresent.contestcode %></th>
+    <th style="border:1px solid black"><%= itemspresent.contestname %></th> 
+    <th style="border:1px solid black"><%= itemspresent.conteststart %></th>
+     <th style="border:1px solid black"><%= itemspresent.contestend %></th>
+
+    <th style="border:1px solid black"><a  href="/contestpage/<%=itemspresent.contestcode%>/codechef">clickhere</a></th>
+  </tr>
+
+<% }}); %>
+</table>
+<% }}  else if(site=="hackerrank"){ %>
+
+<% if(itemspresent[0]!=null){ %>
+<h2>Active Contest</h2>
+<% itemspresent.forEach(function(itemspresent){ %>
+  <% if(itemspresent!=""){ %> 
+	<li><%= itemspresent %>&nbsp;<a href="https://www.hackerrank.com/contests" target="_blank"> clickhere</a></li>
+
+<% }}); %>
+<% }} %>
+
+

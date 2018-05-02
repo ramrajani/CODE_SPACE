@@ -1,0 +1,16 @@
+body{
+	height:100%;
+	width:100%;
+}
+
+#navedit{
+	padding-bottom: 20px;
+
+}
+.contestweblink{
+	padding-top: 100px;
+	color: green;
+}
+a{padding-top: 25px;
+	font-size: 20px;
+}
