@@ -140,7 +140,7 @@ app.get("/contest/:contestsite",function(req,res){
           var $ = cheerio.load(html);
           var allitems = $(".content").children();
           var itemspresent= []; 
-          var itemsfuture=[];       
+             
            
                   
             var presentcontest =$("#content").children().find('ul[class="contests-active"]').eq(0);
@@ -162,6 +162,40 @@ app.get("/contest/:contestsite",function(req,res){
 
   });
 }
+
+   else if(site=="codeforces")
+     {
+        var url = "http://codeforces.com/contests";
+         request(url,function(err,response,html){
+        if(!err)
+        {
+          var $ = cheerio.load(html);
+          var itemspresent= [];
+           
+          for(var i=0;i<5;i++)
+          {        
+            var contestname =$(".datatable").eq(0).find("table").find("tr").eq(i).find("td").eq(0).text();
+            var conteststart = $(".datatable").eq(0).find("table").find("tr").eq(i).find("td").eq(2).text();
+            var contestlength = $(".datatable").eq(0).find("table").find("tr").eq(i).find("td").eq(3).text();
+            var conteststartregis = $(".datatable").eq(0).find("table").find("tr").eq(i).find("td").eq(4).text();
+            var contestregis = $(".datatable").eq(0).find("table").find("tr").eq(i).find("td").eq(5).text();
+            var presentcontest = {contestname:contestname,conteststart:conteststart,contestlength:contestlength,conteststartregis:conteststartregis,contestregis:contestregis};
+
+            itemspresent.push(presentcontest);
+          }
+          
+           
+          res.render("contestpagesdetails",{itemspresent:itemspresent,site:site});
+
+        }
+  
+
+  });
+
+
+
+
+     }
 
 });
 
