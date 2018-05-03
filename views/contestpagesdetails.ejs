@@ -33,4 +33,26 @@
 	<li><%= itemspresent %>&nbsp;<a href="https://www.hackerrank.com/contests" target="_blank"> clickhere</a></li>
 
 <% }}); %>
-<% }} %>
+<% }} else if(site=="codeforces"){ %>
+<table style="border:1px solid black">
+<tr style="border:1px solid black">
+    <th style="border:1px solid black">NAME</th>
+    <th style="border:1px solid black">START</th> 
+    <th style="border:1px solid black">LENGTH</th>
+    <th style="border:1px solid black"></th>
+   <th style="border:1px solid black"></th>
+  </tr>
+<% itemspresent.forEach(function(itemspresent){ %>
+  
+  <% if(itemspresent.contestname!=""){ %> 
+  <tr style="border:1px solid black">
+    <th style="border:1px solid black"><%= itemspresent.contestname %></th>
+    <th style="border:1px solid black"><%= itemspresent.conteststart %></th> 
+    <th style="border:1px solid black"><%= itemspresent.contestlength %></th>
+     <th style="border:1px solid black"><%= itemspresent.conteststartregis %></th>
+    <th style="border:1px solid black"><%= itemspresent.contestregis %></th>
+  </tr>
+
+<% }}); %>
+</table>
+<% } %>
